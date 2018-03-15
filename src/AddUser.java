@@ -60,7 +60,7 @@ public class AddUser {
 
 		System.out.println("Need to add another User?");
 		System.out.println("1.	Yes");
-		System.out.println("2.	Back to Main Menu");
+		System.out.println("2.	Save and Back to Main Menu");
 		
 		Scanner keyboard = new Scanner(System.in);
 		System.out.print("Enter an option:");

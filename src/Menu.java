@@ -44,5 +44,14 @@ public class Menu {
 	{
 		UpdateUser uu = new UpdateUser();
 	}
+	else if (choice==7)
+	{
+		DeleteUser du = new DeleteUser();
+	}
+	else if (choice==8)
+	{
+		System.out.println("Good Bye");
+		System.exit(0);
+	}
 	}
 }

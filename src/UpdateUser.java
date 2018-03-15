@@ -73,7 +73,7 @@ public class UpdateUser {
 		System.out.println("Keep updating current user?");
 		System.out.println("1.	Yes");
 		System.out.println("2.	Change Username");
-		System.out.println("3.	Back to Main Menu");
+		System.out.println("3.	Save and Back to Main Menu");
 		
 		Scanner keyboard = new Scanner(System.in);
 		System.out.print("Enter an option:");
