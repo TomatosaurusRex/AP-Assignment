@@ -1,9 +1,26 @@
+import java.io.BufferedWriter;
+import java.io.File;
+
+import java.io.FileNotFoundException;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.HashSet;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+import java.util.Set;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.Scanner;
 
-public class AddUser {
+public class AddUser{
 	
-	String user[];
-
+	
+	
 	public AddUser() throws Exception{
 		
 		
@@ -39,21 +56,26 @@ public class AddUser {
 		
 	}
 	
-	System.out.print("Enter an status: ");	
-	Scanner in4 = new Scanner(System.in);
-	String u4= in4.nextLine();
+	try {
+		com.mysql.jdbc.Connection con = Connectdb.getConnection("sql12228915","sql12228915","suS2gIQEFz");
+		Statement stmt = con.createStatement();  
+		stmt.executeUpdate("Insert Into Users (UserName,Name,Age) Values ('"+u1+"','"+u2+"',"+u3+")");  
+		con.close();  
+	}
 	
-	System.out.println("folowing user has been added: "+u1+","+u2+","+u3+","+u4);
+	catch(Exception e){ System.out.println(e);
+				
+	System.out.println("folowing user has been added: "+u1+","+u2+","+u3);
 	System.out.println();
 	
 	try {
-		BackMenu();
-	} catch (Exception e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
+	BackMenu();
+	} catch (Exception e1) {
+	// TODO Auto-generated catch block
+	e1.printStackTrace();
 	}
-	
 	}
+}
 	
 	public void BackMenu() throws Exception{
 		

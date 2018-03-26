@@ -16,7 +16,7 @@ public class DeleteUser {
 		u1= in1.nextLine();
 		
 		System.out.println();
-		System.out.println("Are you sure you want to delete " +u1);
+		System.out.println("Are you sure you want to delete " + u1 + "?");
 		System.out.println("1.	Yes");
 		System.out.println("2.	No");
 		
@@ -32,8 +32,7 @@ public class DeleteUser {
 		else if (choice==2)
 		{
 			BackMenu();
-		}	
-	
+		}
 	}
 	
 	public void DeleteU() throws Exception{
@@ -56,9 +55,6 @@ public class DeleteUser {
 		{
 			BackMenu();
 		}	
-	
-		
-		
 	}
 	
 	public void BackMenu() throws Exception{
@@ -82,5 +78,4 @@ public class DeleteUser {
 			Menu m = new Menu();
 		}
 	}
-
 }

@@ -23,6 +23,7 @@ public class Menu {
 	int choice = keyboard.nextInt();
 	if(choice==1){
 		ListUsers lu = new ListUsers();
+		//SQLAccess sa = new SQLAccess();
 	}
 	else if (choice==2)
 	{

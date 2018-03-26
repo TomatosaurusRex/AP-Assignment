@@ -1,18 +1,33 @@
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.Scanner;
 
-public class ListUsers {
+
+public class ListUsers{
 	
-	public ListUsers() throws Exception{
+	static String read;
+	
+	public ListUsers() throws Exception  {
 		
 		System.out.println("===================================");
 		System.out.println("	All Current Users");
 		System.out.println("===================================");
 		System.out.println();
+
+		try{ 
+		com.mysql.jdbc.Connection con = Connectdb.getConnection("sql12228915","sql12228915","suS2gIQEFz");
 		
+		Statement stmt=con.createStatement();  
+		ResultSet rs=stmt.executeQuery("select * from Users");  
+		while(rs.next())  
+		System.out.println(rs.getString("UserName")+"  "+rs.getString("Name")+"  "+rs.getInt("Age"));  
+		con.close();  
+		BackMenu();
 		
-		BackMenu();	
-		
+		}catch(Exception e){ System.out.println(e);}  
 	}
+	       		
+	
 		
 		public void BackMenu() throws Exception{
 			
