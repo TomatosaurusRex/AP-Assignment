@@ -2,7 +2,6 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Scanner;
 
-
 public class ListUsers{
 	
 	static String read;
@@ -21,14 +20,13 @@ public class ListUsers{
 		ResultSet rs=stmt.executeQuery("select * from Users");  
 		while(rs.next())  
 		System.out.println(rs.getString("UserName")+"  "+rs.getString("Name")+"  "+rs.getInt("Age"));  
-		con.close();  
+		con.close(); 
+		
 		BackMenu();
 		
 		}catch(Exception e){ System.out.println(e);}  
 	}
-	       		
-	
-		
+
 		public void BackMenu() throws Exception{
 			
 			System.out.println();
@@ -54,9 +52,5 @@ public class ListUsers{
 			{
 				Menu mm = new Menu();
 			}
-		
-		
-		
 	}
-
 }
