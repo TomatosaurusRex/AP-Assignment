@@ -1,6 +1,11 @@
 import java.sql.Statement;
 import java.util.Scanner;
 
+/*
+ * Adding of Users to the Mininet Database
+ * 
+ */
+
 public class AddUser{
 
 	String d1,d2;

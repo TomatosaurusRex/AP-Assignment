@@ -17,6 +17,7 @@ public class CheckStatus {
 		String un= in1.nextLine();
 
 		try{ 
+			//Connecting to database
 			com.mysql.jdbc.Connection con = Connectdb.getConnection("sql12228915","sql12228915","suS2gIQEFz");
 			Statement stmt=con.createStatement();  
 			ResultSet rs=stmt.executeQuery("select * from UserStatus where UserName = '"+un+"'");  

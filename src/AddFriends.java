@@ -1,6 +1,11 @@
 import java.sql.Statement;
 import java.util.Scanner;
 
+/*
+ * Adding of Friends to the Mininet Database
+ * 
+ */
+
 public class AddFriends {
 
 	public AddFriends() throws Exception{
