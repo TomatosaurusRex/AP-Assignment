@@ -5,6 +5,11 @@ import java.sql.SQLException;
 
 import com.mysql.jdbc.Connection;
 
+/*
+ * Connection to the database to hold all of the Mini Net info
+ * 
+ * 
+ */
 	
 	public class Connectdb {   
 		static {

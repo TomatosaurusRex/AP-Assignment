@@ -15,6 +15,7 @@ public class AddUser{
 		System.out.println();
 
 		System.out.print("Enter an Username: ");
+		System.out.print("*10 charactors limit");
 		Scanner in1 = new Scanner(System.in);
 		String u1= in1.nextLine();
 
@@ -49,32 +50,35 @@ public class AddUser{
 					addParent.executeUpdate("Insert Into Users (UserName,P1UserName,P2UserName) Values ('"+u1+"','"+d1+"',"+d2+")");  
 				}
 			}
-			catch(Exception e){ System.out.println(e);
+			catch(Exception e){ System.out.println("One or both parents do not exists in the database. Please try again");
 			}
 			con.close();
 			BackMenu();
 		}
-		catch(Exception e){ System.out.println(e);
+		catch(Exception e){ System.out.println("That username already exists or user name is over 10 charactors long");
 		}
 	}
 	@SuppressWarnings({ "unused", "resource" })
 	public void BackMenu() throws Exception{
 
-		System.out.println("Need to add another User?");
-		System.out.println("1.	Yes");
-		System.out.println("2.	Back to Main Menu");
+		try{
+			System.out.println("Need to add another User?");
+			System.out.println("1.	Yes");
+			System.out.println("2.	Back to Main Menu");
 
-		Scanner keyboard = new Scanner(System.in);
-		System.out.print("Enter an option:");
-		int choice = keyboard.nextInt();
-		System.out.println();
+			Scanner keyboard = new Scanner(System.in);
+			System.out.print("Enter an option:");
+			int choice = keyboard.nextInt();
+			System.out.println();
 
-		if(choice==1){
-			AddUser nn = new AddUser();
-		}
-		else if (choice==2)
-		{
-			Menu su = new Menu();
-		}
+			if(choice==1){
+				AddUser nn = new AddUser();
+			}
+			else if (choice==2)
+			{
+				Menu su = new Menu();
+			}
+		}catch(Exception e){ System.out.println("Incorrect Imput. Please Try again");
+		BackMenu();}
 	}
 }

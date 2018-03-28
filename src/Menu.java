@@ -14,10 +14,10 @@ public class Menu {
 	System.out.println("	MiniNet	Menu");
 	System.out.println("===================================");
 	System.out.println("1.	List all Users");
-	System.out.println("2.	Select a User");
+	System.out.println("2.	Add User");
 	System.out.println("3.	Who are their friends");
 	System.out.println("4.	Check User status");
-	System.out.println("5.	Add User");
+	System.out.println("5.	Update Friends");
 	System.out.println("6.	Update Users details");
 	System.out.println("7.	Update Users Status");
 	System.out.println("8.	Delete User");
@@ -34,7 +34,7 @@ public class Menu {
 	}
 	else if (choice==2)
 	{
-		SelectUser su = new SelectUser();
+		AddUser au = new AddUser();
 	}
 	else if (choice==3)
 	{
@@ -46,7 +46,7 @@ public class Menu {
 	}
 	else if (choice==5)
 	{
-		AddUser au = new AddUser();
+		AddFriends au = new AddFriends();
 	}
 	else if (choice==6)
 	{
