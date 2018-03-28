@@ -4,6 +4,12 @@ public class Menu {
 	
 	public Menu() throws Exception{
 		
+		RunMenu();
+		
+	}
+	
+	public void RunMenu() throws Exception{
+		
 	System.out.println("===================================");
 	System.out.println("	MiniNet	Menu");
 	System.out.println("===================================");
@@ -12,12 +18,13 @@ public class Menu {
 	System.out.println("3.	Who are their friends");
 	System.out.println("4.	Check User status");
 	System.out.println("5.	Add User");
-	System.out.println("6.	Update User");
-	System.out.println("7.	Delete User");
-	System.out.println("8.	Exit");
+	System.out.println("6.	Update Users details");
+	System.out.println("7.	Update Users Status");
+	System.out.println("8.	Delete User");
+	System.out.println("9.	Exit");
 	System.out.println();
 
-	@SuppressWarnings("resource")
+	try{
 	Scanner keyboard = new Scanner(System.in);
 	System.out.print("Enter an option:");
 	int choice = keyboard.nextInt();
@@ -47,12 +54,18 @@ public class Menu {
 	}
 	else if (choice==7)
 	{
-		DeleteUser du = new DeleteUser();
+		UpdateStatus ud = new UpdateStatus();
 	}
 	else if (choice==8)
+	{
+		DeleteUser du = new DeleteUser();
+	}
+	else if (choice==9)
 	{
 		System.out.println("Good Bye");
 		System.exit(0);
 	}
+	}catch(Exception e){ System.out.println("Incorrect Imput. Please Try again");
+	RunMenu();}
 	}
 }

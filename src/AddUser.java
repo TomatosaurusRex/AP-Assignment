@@ -5,6 +5,7 @@ public class AddUser{
 
 	String d1,d2;
 
+	@SuppressWarnings({ "resource", "unused" })
 	public AddUser() throws Exception{
 
 		System.out.println();
@@ -56,6 +57,7 @@ public class AddUser{
 		catch(Exception e){ System.out.println(e);
 		}
 	}
+	@SuppressWarnings({ "unused", "resource" })
 	public void BackMenu() throws Exception{
 
 		System.out.println("Need to add another User?");

@@ -1,6 +1,10 @@
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.Scanner;
 
 public class UpdateUser {
+	
+	static String username;
 	
 	public UpdateUser() throws Exception {
 		
@@ -12,20 +16,23 @@ public class UpdateUser {
 		
 		System.out.print("Enter an Username that needs updating: ");
 		Scanner in1 = new Scanner(System.in);
-		String u1= in1.nextLine();
+		username= in1.nextLine();
 		
 		Update();
 	}	
 	
 	public void Update() throws Exception{		
 		
+		
+		
+		com.mysql.jdbc.Connection con = Connectdb.getConnection("sql12228915","sql12228915","suS2gIQEFz");
+		
 		System.out.println("===================================");
 		System.out.println("	Which fields needs updateing?");
 		System.out.println("===================================");
 		System.out.println("1.	Name");
 		System.out.println("2.	Age");
-		System.out.println("3.	Status");
-		System.out.println("4.	Back");
+		System.out.println("3.	Back to Main Menu");
 		
 		Scanner keyboard = new Scanner(System.in);
 		System.out.print("Enter an option:");
@@ -38,9 +45,15 @@ public class UpdateUser {
 			System.out.print("Enter New Name: ");	
 			Scanner p1 = new Scanner(System.in);
 			String u2= p1.nextLine();
-									
-			BackMenu();
 			
+			try{ 
+				Statement addUser = con.createStatement();  
+				addUser.executeUpdate("Update Users set Name =  '"+u2+"'");  
+				con.close(); 
+				
+				BackMenu();
+				
+				}catch(Exception e){ System.out.println(e);}  
 		}
 		else if (choice==2)
 		{
@@ -49,24 +62,21 @@ public class UpdateUser {
 			Scanner p2 = new Scanner(System.in);
 			int u2= p2.nextInt();
 			
-			BackMenu();
-		}
+			try{ 
+				Statement addUser = con.createStatement();  
+				addUser.executeUpdate("Update Users set Age = "+u2);  
+				con.close(); 
+				
+				BackMenu();
+				
+				}catch(Exception e){ System.out.println(e);}  
+			}
 		else if (choice==3)
-		{
-			System.out.println("Updating Status");
-			System.out.print("Enter New Status: ");	
-			Scanner p3 = new Scanner(System.in);
-			String u3= p3.nextLine();
-			
-			BackMenu();
-		}
-		else if (choice==4)
 		{
 			Menu cs = new Menu();
 		}
-		
-	}
-	
+}
+
 	public void BackMenu() throws Exception{
 		
 		System.out.println();
@@ -91,9 +101,9 @@ public class UpdateUser {
 		{
 			Menu su = new Menu();
 		}
-		
 	}
+	}
+	
 
 
 
-}
