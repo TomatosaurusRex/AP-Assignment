@@ -58,7 +58,7 @@ public class ListUsers{
 		Button btn1 = new Button("Back");
 		Button close = new Button("Exit");
 
-		btn1.setOnAction (e -> {try {MiniNet2 mn = new MiniNet2();
+		btn1.setOnAction (e -> {try {MiniNet mn = new MiniNet();
 		} catch (Exception e1) {
 			e1.printStackTrace();
 		}});
